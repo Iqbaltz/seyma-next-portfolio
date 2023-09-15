@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="127.104" viewBox="0 0 132 127.104">
+  <g id="Component_4_2" data-name="Component 4 – 2" transform="translate(0 0.037)">
+    <text id="back_to_top" data-name="back to top" transform="translate(66 117.067)" fill="#fff" font-size="28" font-family="Branch-Regular, Branch"><tspan x="-65" y="0">back to top</tspan></text>
+    <g id="Group_111" data-name="Group 111" transform="translate(52.621 78.067) rotate(-90)">
+      <path id="Path_95" data-name="Path 95" d="M14.352,0S3.707-.266,0,13.379" transform="translate(63.716 13.379)" fill="none" stroke="#fff" stroke-width="3"/>
+      <line id="Line_45" data-name="Line 45" x1="78.067" transform="translate(0 13.379)" fill="none" stroke="#fff" stroke-width="3"/>
+      <path id="Path_96" data-name="Path 96" d="M14.352,13.379S3.707,13.645,0,0" transform="translate(63.716)" fill="none" stroke="#fff" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

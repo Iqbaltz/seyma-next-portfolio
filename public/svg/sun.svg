@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="113.686" height="113.685" viewBox="0 0 113.686 113.685">
+  <g id="Group_10" data-name="Group 10" transform="translate(-6444.501 5366)">
+    <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(6491.007 -5319.963)" fill="#fff" stroke="#fff" stroke-width="1">
+      <circle cx="10.335" cy="10.335" r="10.335" stroke="none"/>
+      <circle cx="10.335" cy="10.335" r="9.835" fill="none"/>
+    </g>
+    <line id="Line_6" data-name="Line 6" y2="46.978" transform="translate(6501.343 -5366)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_7" data-name="Line 7" y1="46.978" transform="translate(6501.343 -5299.292)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_8" data-name="Line 8" y2="46.978" transform="translate(6558.187 -5309.156) rotate(90)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_9" data-name="Line 9" y1="46.978" transform="translate(6491.479 -5309.156) rotate(90)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_10" data-name="Line 10" y2="46.978" transform="matrix(0.391, 0.921, -0.921, 0.391, 6553.666, -5331.367)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_11" data-name="Line 11" y1="46.978" transform="matrix(0.391, 0.921, -0.921, 0.391, 6492.263, -5305.301)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_12" data-name="Line 12" y1="46.978" transform="matrix(-0.391, 0.921, -0.921, -0.391, 6492.263, -5313.012)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_13" data-name="Line 13" y2="46.978" transform="matrix(-0.391, 0.921, -0.921, -0.391, 6553.666, -5286.946)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_14" data-name="Line 14" y2="46.978" transform="matrix(0.719, 0.695, -0.695, 0.719, 6540.83, -5350.045)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_15" data-name="Line 15" y1="46.978" transform="matrix(0.719, 0.695, -0.695, 0.719, 6494.49, -5302.062)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_16" data-name="Line 16" y1="46.978" transform="matrix(-0.719, 0.695, -0.695, -0.719, 6494.49, -5316.253)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_17" data-name="Line 17" y2="46.978" transform="matrix(-0.719, 0.695, -0.695, -0.719, 6540.83, -5268.268)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_18" data-name="Line 18" y2="46.978" transform="translate(6522.636 -5361.861) rotate(22)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_19" data-name="Line 19" y1="46.978" transform="translate(6497.646 -5300.008) rotate(22)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_20" data-name="Line 20" y1="46.978" transform="translate(6497.646 -5318.305) rotate(158)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_21" data-name="Line 21" y2="46.978" transform="translate(6522.636 -5256.452) rotate(158)" fill="none" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>
