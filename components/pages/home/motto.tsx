@@ -7,7 +7,7 @@ type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function motto({}: Props) {
+export default function Motto({}: Props) {
   const fadeIns = useRef<any>([]);
   const goRight = useRef<any>(null);
   const goLeft = useRef<any>(null);

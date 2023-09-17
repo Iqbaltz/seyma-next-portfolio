@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
-export default function approach({}: Props) {
+export default function Approach({}: Props) {
   const fadeIns = useRef<any>([]);
   const appearing = useRef<any>();
   const goRight = useRef<any>(null);

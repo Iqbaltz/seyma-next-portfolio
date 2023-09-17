@@ -28,7 +28,7 @@ const projectList = [
   },
 ];
 
-export default function projects() {
+export default function Projects() {
   const sectionRef = useRef<any>(null);
   const triggerRef = useRef<any>(null);
   const ups = useRef<any>([]);

@@ -12,14 +12,6 @@ const withoutLayout = ["/studio"];
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useRouter();
 
-  const isWithoutLayout = withoutLayout.some((path) =>
-    pathname.startsWith(path)
-  );
-
-  if (isWithoutLayout) {
-    return <>{children}</>;
-  }
-
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -41,6 +33,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       });
     })();
   }, []);
+
+  const isWithoutLayout = withoutLayout.some((path) =>
+    pathname.startsWith(path)
+  );
+
+  if (isWithoutLayout) {
+    return <>{children}</>;
+  }
 
   return (
     <>
