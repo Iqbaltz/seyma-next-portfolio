@@ -8,9 +8,45 @@ type Props = {};
 gsap.registerPlugin(ScrollTrigger);
 
 export default function motto({}: Props) {
+  const fadeIns = useRef<any>([]);
+  const goRight = useRef<any>(null);
+  const goLeft = useRef<any>(null);
   const appearing = useRef<any>([]);
 
   useIsomorphicLayoutEffect(() => {
+    gsap.to(goRight.current, {
+      scrollTrigger: {
+        trigger: goRight.current,
+        scrub: true,
+        end: "600% top",
+      },
+      x: 64,
+      // duration: 1,
+    });
+
+    gsap.to(goLeft.current, {
+      scrollTrigger: {
+        trigger: goLeft.current,
+        scrub: true,
+        end: "600% top",
+      },
+      x: -64,
+      // duration: 1,
+    });
+
+    fadeIns.current.forEach((elm: any) => {
+      gsap.to(elm, {
+        scrollTrigger: {
+          trigger: elm,
+          start: "top 98%",
+        },
+        opacity: 1,
+        ease: "ease",
+        duration: 1,
+        delay: 0.2,
+      });
+    });
+
     appearing.current.forEach((elm: any) => {
       gsap.fromTo(
         elm,
@@ -24,7 +60,6 @@ export default function motto({}: Props) {
           scrollTrigger: {
             trigger: elm,
             start: "top 98%",
-            markers: true,
           },
           y: "0em",
           opacity: "1",
@@ -38,7 +73,13 @@ export default function motto({}: Props) {
     <section className="pb-40 pt-64">
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-16">
-          <h1 className="fade-in go-right opacity-0 text-9xl mb-8 font-semibold">
+          <h1
+            ref={(el) => {
+              fadeIns.current.push(el);
+              goRight.current = el;
+            }}
+            className="opacity-0 text-9xl mb-8 font-semibold"
+          >
             CREATIVE
           </h1>
           <div className="overflow-hidden">
@@ -52,7 +93,13 @@ export default function motto({}: Props) {
           </div>
         </div>
         <div className="text-right">
-          <h1 className="fade-in go-left opacity-0 text-9xl mb-8 font-semibold mr-[15%]">
+          <h1
+            ref={(el) => {
+              fadeIns.current.push(el);
+              goLeft.current = el;
+            }}
+            className="opacity-0 text-9xl mb-8 font-semibold mr-[15%]"
+          >
             DRIVEN BY
           </h1>
           <div className="overflow-hidden">
@@ -65,7 +112,10 @@ export default function motto({}: Props) {
             </h1>
           </div>
         </div>
-        <p className="fade-in opacity-0 max-w-[500px] text-xl mt-16">
+        <p
+          ref={(el) => fadeIns.current.push(el)}
+          className="opacity-0 max-w-[500px] text-xl mt-16"
+        >
           I believe in using storytelling and design thinking to create products
           that not only solve the right problems, but also engage and inspire
           people. By putting empathy at the heart of my work, I strive to create

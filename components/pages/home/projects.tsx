@@ -35,8 +35,6 @@ export default function projects() {
   const downs = useRef<any>([]);
 
   useIsomorphicLayoutEffect(() => {
-    console.log("w", sectionRef?.current?.offsetWidth);
-    console.log("wt", triggerRef.current.offsetWidth);
     const pin = gsap.fromTo(
       sectionRef.current,
       {
@@ -106,6 +104,7 @@ export default function projects() {
           >
             {projectList.map(({ name, color }, i) => (
               <div
+                key={i}
                 ref={(el) =>
                   i % 2 ? downs?.current?.push(el) : ups?.current?.push(el)
                 }

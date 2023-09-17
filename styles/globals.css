@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.dot-black {
+  top: calc(var(--y, 0) * 1px - 16px) !important;
+  left: calc(var(--x, 0) * 1px - 16px) !important;
+}
+
+.btn-effect:hover .dot-black {
+  transform: scale(15);
+}
+
+.marquee {
+  font-size: 0;
+}
