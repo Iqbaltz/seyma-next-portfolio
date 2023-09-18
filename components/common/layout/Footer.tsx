@@ -18,11 +18,11 @@ export default function Footer() {
   }
 
   useIsomorphicLayoutEffect(() => {
-    marquee.current.forEach((el:any) => {
+    marquee.current.forEach((el: any) => {
       // set a default rate, the higher the value, the faster it is
       let rate = 200;
       // get the width of the element
-      let distance = el?.clientWidth + 98;
+      let distance = el?.clientWidth + 51;
       console.log(distance);
       // get the margin-right of the element
       let style = window.getComputedStyle(el);
