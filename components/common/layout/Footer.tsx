@@ -23,7 +23,6 @@ export default function Footer() {
       let rate = 200;
       // get the width of the element
       let distance = el?.clientWidth + 51;
-      console.log(distance);
       // get the margin-right of the element
       let style = window.getComputedStyle(el);
       let marginRight = parseInt(style.marginRight) || 0;

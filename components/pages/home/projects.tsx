@@ -57,21 +57,20 @@ export default function Projects() {
       }
     );
 
-    console.log("ups", ups);
-    ups.current.forEach((elm: any, i: number) => {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: triggerRef.current,
-            start: `+=${i * elm?.offsetHeight} top`,
-            end: `${triggerRef?.current?.offsetWidth} top`,
-            scrub: 0.3,
-          },
-        })
-        .to(elm, {
-          duration: 1,
-          y: -80,
-        });
+    ups?.current?.forEach((elm: any, i: number) => {
+      gsap.to(elm, {
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: `+=${i * elm?.offsetHeight} top`,
+          end: `${
+            triggerRef?.current?.offsetWidth + i * elm?.offsetHeight
+          } top`,
+          scrub: 0.3,
+          markers: true,
+        },
+        duration: 1,
+        y: -80,
+      });
     });
     downs.current.forEach((elm: any, i: number) => {
       gsap
