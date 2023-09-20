@@ -66,14 +66,14 @@ export default function Approach({}: Props) {
     );
   }, []);
   return (
-    <section className="py-40">
-      <div className="max-w-[1600px] mx-auto">
+    <section className="py-40 overflow-hidden">
+      <div className="xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
         <h1
           ref={(el) => {
             fadeIns.current.push(el);
             goRight.current = el;
           }}
-          className="opacity-0 flex font-semibold items-center text-9xl"
+          className="opacity-0 flex font-semibold items-center text-8xl 2xl:text-9xl"
         >
           A
           <img
@@ -89,14 +89,14 @@ export default function Approach({}: Props) {
               appearing.current = el;
               goLeft.current = el;
             }}
-            className="branch text-9xl text-right mt-8"
+            className="branch text-8xl 2xl:text-9xl text-right mt-8"
           >
             APPROACH TO DESIGN
           </h1>
         </div>
         <p
           ref={(el) => fadeIns.current.push(el)}
-          className="opacity-0 text-xl mt-24 max-w-[660px]"
+          className="opacity-0 text-lg 2xl:text-xl mt-24 max-w-[600px] 2xl:max-w-[660px]"
         >
           At the core of my approach is design thinking, a methodology that
           prioritises empathy, experimentation, and innovation. By truly

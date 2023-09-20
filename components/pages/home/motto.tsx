@@ -38,7 +38,7 @@ export default function Motto({}: Props) {
       gsap.to(elm, {
         scrollTrigger: {
           trigger: elm,
-          start: "top 98%",
+          start: "top 96%",
         },
         opacity: 1,
         ease: "ease",
@@ -59,7 +59,7 @@ export default function Motto({}: Props) {
         {
           scrollTrigger: {
             trigger: elm,
-            start: "top 98%",
+            start: "top 96%",
           },
           y: "0em",
           opacity: "1",
@@ -70,22 +70,22 @@ export default function Motto({}: Props) {
   }, []);
 
   return (
-    <section className="pb-40 pt-64">
-      <div className="max-w-[1600px] mx-auto">
+    <section className="pb-40 pt-64 overflow-hidden">
+      <div className="xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
         <div className="mb-16">
           <h1
             ref={(el) => {
               fadeIns.current.push(el);
               goRight.current = el;
             }}
-            className="opacity-0 text-9xl mb-8 font-semibold"
+            className="opacity-0 text-8xl 2xl:text-9xl mb-8 font-semibold"
           >
             CREATIVE
           </h1>
           <div className="overflow-hidden">
             <h1
               ref={(el) => appearing.current.push(el)}
-              className="text-9xl branch ml-[15%] flex"
+              className="text-8xl 2xl:text-9xl branch ml-[15%] flex"
             >
               <img src="/svg/sun.svg" alt="sun" className="w-24 mr-8" />
               SOLUTIONS
@@ -98,14 +98,14 @@ export default function Motto({}: Props) {
               fadeIns.current.push(el);
               goLeft.current = el;
             }}
-            className="opacity-0 text-9xl mb-8 font-semibold mr-[15%]"
+            className="opacity-0 text-8xl 2xl:text-9xl mb-8 font-semibold mr-[15%]"
           >
             DRIVEN BY
           </h1>
           <div className="overflow-hidden">
             <h1
               ref={(el) => appearing.current.push(el)}
-              className="text-9xl branch flex justify-end"
+              className="text-8xl 2xl:text-9xl branch flex justify-end"
             >
               <img src="/svg/star.svg" alt="sun" className="w-20 mr-8" />
               EMPATHY
@@ -114,7 +114,7 @@ export default function Motto({}: Props) {
         </div>
         <p
           ref={(el) => fadeIns.current.push(el)}
-          className="opacity-0 max-w-[500px] text-xl mt-16"
+          className="opacity-0 max-w-[440px] 2xl:max-w-[500px] text-lg 2xl:text-xl mt-16"
         >
           I believe in using storytelling and design thinking to create products
           that not only solve the right problems, but also engage and inspire

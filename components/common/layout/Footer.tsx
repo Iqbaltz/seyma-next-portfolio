@@ -44,82 +44,93 @@ export default function Footer() {
 
   return (
     <footer
-      className={`py-20 bg-[url(/images/grainy-bg.png)] bg-black/30 bg-blend-hard-light bg-cover overflow-hidden ${plusjkt.className}`}
+      className={`bg-[url(/images/grainy-bg.png)] bg-black/50 bg-blend-hard-light bg-cover h-max ${plusjkt.className}`}
     >
-      <div className="marquee-container overflow-hidden whitespace-nowrap">
-        <div className="marquee">
-          <span ref={(el) => marquee.current.push(el)} className="inline-block">
-            <h1 className="flex text-9xl font-semibold">
-              GET IN TOUCH
-              <img
-                src="/svg/small-star-white.svg"
-                className="mx-16"
-                alt="small-star-white"
-              />
-            </h1>
-          </span>
-          <span ref={(el) => marquee.current.push(el)} className="inline-block">
-            <h1 className="flex text-9xl font-semibold">
-              GET IN TOUCH
-              <img
-                src="/svg/small-star-white.svg"
-                className="mx-16"
-                alt="small-star-white"
-              />
-            </h1>
-          </span>
-          <span ref={(el) => marquee.current.push(el)} className="inline-block">
-            <h1 className="flex text-9xl font-semibold">
-              GET IN TOUCH
-              <img
-                src="/svg/small-star-white.svg"
-                className="mx-16"
-                alt="small-star-white"
-              />
-            </h1>
-          </span>
+      <div className="py-20 bg-blend-darken bg-black bg-opacity-30">
+        <div className="marquee-container overflow-hidden whitespace-nowrap">
+          <div className="marquee">
+            <span
+              ref={(el) => marquee.current.push(el)}
+              className="inline-block"
+            >
+              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
+                GET IN TOUCH
+                <img
+                  src="/svg/small-star-white.svg"
+                  className="mx-16"
+                  alt="small-star-white"
+                />
+              </h1>
+            </span>
+            <span
+              ref={(el) => marquee.current.push(el)}
+              className="inline-block"
+            >
+              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
+                GET IN TOUCH
+                <img
+                  src="/svg/small-star-white.svg"
+                  className="mx-16"
+                  alt="small-star-white"
+                />
+              </h1>
+            </span>
+            <span
+              ref={(el) => marquee.current.push(el)}
+              className="inline-block"
+            >
+              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
+                GET IN TOUCH
+                <img
+                  src="/svg/small-star-white.svg"
+                  className="mx-16"
+                  alt="small-star-white"
+                />
+              </h1>
+            </span>
+          </div>
         </div>
-      </div>
 
-      <div className="max-w-[1600px] mx-auto">
-        <p className="text-4xl mt-40 w-[560px]">
-          Let’s grab a coffee and dive into your design needs.
-        </p>
-
-        <div className="flex items-center mt-16 text-white">
-          <p className="text-2xl mr-6">GET TO KNOW ME</p>
-          <button className="px-8 py-5 border border-white rounded-full">
-            <img
-              className="w-36"
-              src="./svg/arrow-right-white.svg"
-              alt="arrow-right"
-            />
-          </button>
-        </div>
-        <div
-          onClick={scrollToTop}
-          className="flex justify-end mt-24 cursor-pointer"
-        >
-          <img src="/images/back-top.png" className="w-32" alt="back-top" />
-        </div>
-        <div className="flex justify-between mt-32">
-          <p className="text-xl font-light">
-            © 2023 sne design // by Seyma N. Ermis
+        <div className="xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
+          <p className="text-3xl 2xl:text-4xl mt-32 2xl:mt-40 max-w-[500px] 2xl:w-[560px]">
+            Let’s grab a coffee and dive into your design needs.
           </p>
-          <div className="flex items-center text-2xl">
-            <p>FOLLOW ME</p>
-            <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
-            <a className="underline" href="#">
-              LINKEDIN
-            </a>
-            <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
-            <a className="underline" href="#">
-              INSTAGRAM
-            </a>
-            <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
-            <a className="underline" href="#">
-              BEHANCE
-            </a>
+
+          <div className="flex items-center mt-16 text-white">
+            <p className="text-xl 2xl:text-2xl mr-6">GET TO KNOW ME</p>
+            <button className="px-6 2xl:px-8 py-4 2xl:py-5 border border-white rounded-full">
+              <img
+                className="w-28 2xl:w-32"
+                src="./svg/arrow-right-white.svg"
+                alt="arrow-right"
+              />
+            </button>
+          </div>
+          <div
+            onClick={scrollToTop}
+            className="flex justify-end mt-16 2xl:mt-24 cursor-pointer"
+          >
+            <img src="/images/back-top.png" className="w-32" alt="back-top" />
+          </div>
+          <div className="flex justify-between mt-24 2xl:mt-32">
+            <p className="text-lg 2xl:text-xl font-light">
+              © 2023 sne design // by Seyma N. Ermis
+            </p>
+            <div className="flex items-center text-xl 2xl:text-2xl">
+              <p>FOLLOW ME</p>
+              <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
+              <a className="underline" href="#">
+                LINKEDIN
+              </a>
+              <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
+              <a className="underline" href="#">
+                INSTAGRAM
+              </a>
+              <img src="/svg/tiny-star.svg" className="mx-4" alt="tiny-star" />
+              <a className="underline" href="#">
+                BEHANCE
+              </a>
+            </div>
           </div>
         </div>
       </div>

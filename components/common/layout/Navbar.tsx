@@ -1,47 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import gsap from "gsap";
 
 const plusjkt = Plus_Jakarta_Sans({ subsets: ["latin"] });
-
-const menuList = [
-  {
-    label: {
-      id: "Layanan",
-      en: "Services",
-    },
-    url: "/services",
-  },
-  {
-    label: {
-      id: "Pelatihan",
-      en: "Training",
-    },
-    url: "#",
-  },
-  {
-    label: {
-      id: "Tim Kami",
-      en: "Our Team",
-    },
-    url: "/team",
-  },
-  {
-    label: {
-      id: "Tentang",
-      en: "About",
-    },
-    url: "/about",
-  },
-  {
-    label: {
-      id: "Hubungi Kami",
-      en: "Contact Us",
-    },
-    url: "/contact",
-  },
-];
 
 export default function Navbar() {
   const menu = useRef<any>();
@@ -91,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed z-10 mix-blend-difference w-[100%] max-w-[1600px] top-0 left-[50%] translate-x-[-50%] flex justify-between items-center py-8 ${plusjkt.className}`}
+        className={`fixed z-10 mix-blend-difference w-[100%] xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 top-0 left-[50%] translate-x-[-50%] flex justify-between items-center py-8 ${plusjkt.className}`}
       >
         <p className="font-bold text-4xl">sne</p>
         <div
@@ -106,33 +68,33 @@ export default function Navbar() {
 
       <div
         ref={menu}
-        className="fixed z-50 w-full h-full translate-y-full flex bg-black/30 backdrop-blur justify-center items-center"
+        className="fixed z-50 w-full h-full translate-y-full flex backdrop-blur justify-center items-center"
         id="menu"
       >
-        <div className="absolute top-8 z-50 max-w-[1600px] mx-auto flex justify-end  w-full">
+        <div className="absolute top-8 z-50 xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto flex justify-end w-full">
           <img
             ref={crossBtn}
             onClick={handleCloseMenu}
             src="/svg/x-cross.svg"
             alt="cross"
-            className="cursor-pointer w-10 opacity-0"
+            className="cursor-pointer xl:w-8 2xl:w-10 opacity-0"
             id="cross-btn"
           />
         </div>
-        <div className="absolute w-full h-full z-40 mix-blend-soft-light bg-black opacity-70"></div>
+        <div className="absolute w-full h-full z-40 mix-blend-soft-light bg-black bg-opacity-80"></div>
         <img
           src="/images/grainy-bg.png"
           alt="grainy"
           className="absolute w-full h-full object-cover z-30 opacity-70"
         />
-        <nav className="relative z-50 font-semibold w-full max-w-[1600px] mx-auto">
+        <nav className="relative z-50 font-semibold w-full xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
           <div
             ref={(el) => underlines.current.push(el)}
             className="relative flex items-center py-3 after:transition-[width] after:content-[''] after:h-[2px] after:w-0 after:bg-white after:absolute after:bottom-0 after:left-0"
           >
             <div className="flex items-end">
               <p className="branch mr-8 text-2xl font-light">01</p>
-              <a href="#" className="text-9xl branch font-normal">
+              <a href="#" className="text-8xl 2xl:text-9xl branch font-normal">
                 HOME
               </a>
             </div>
@@ -148,7 +110,7 @@ export default function Navbar() {
             className="relative flex justify-center items-end py-3 after:transition-[width] after:content-[''] after:h-[2px] after:w-0 after:bg-white after:absolute after:bottom-0 after:right-0"
           >
             <p className="branch mr-8 text-2xl font-light">02</p>
-            <a href="#" className="text-9xl text-center mr-[30%]">
+            <a href="#" className="text-8xl 2xl:text-9xl text-center mr-[30%]">
               ABOUT
             </a>
           </div>
@@ -157,7 +119,7 @@ export default function Navbar() {
             className="relative flex justify-center items-end py-3 after:transition-[width] after:content-[''] after:h-[2px] after:w-0 after:bg-white after:absolute after:bottom-0 after:left-0"
           >
             <p className="branch mr-8 text-2xl font-light ml-[10%]">03</p>
-            <a href="#" className="text-9xl text-center">
+            <a href="#" className="text-8xl 2xl:text-9xl text-center">
               WORK
             </a>
           </div>
@@ -166,7 +128,7 @@ export default function Navbar() {
             className="relative flex justify-end items-end py-3 after:transition-[width] after:content-[''] after:h-[2px] after:w-0 after:bg-white after:absolute after:bottom-0 after:right-0"
           >
             <p className="branch mr-8 text-2xl font-light">04</p>
-            <a href="#" className="text-9xl">
+            <a href="#" className="text-8xl 2xl:text-9xl">
               CONTACT
             </a>
           </div>

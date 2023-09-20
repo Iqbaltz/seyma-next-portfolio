@@ -101,7 +101,7 @@ export default function Projects() {
         <div ref={triggerRef}>
           <div
             ref={sectionRef}
-            className="px-40 h-screen w-max grid gap-40 grid-flow-col items-center relative"
+            className="px-40 2xl:px-52 h-screen w-max grid gap-40 grid-flow-col items-center relative"
           >
             {projectList.map(({ name, color }, i) => (
               <div
@@ -111,7 +111,7 @@ export default function Projects() {
                 }
                 className={`${
                   i % 2 ? "-translate-y-20" : "translate-y-20"
-                } w-96 h-[440px] rounded-3xl flex justify-center items-center bg-[lightgrey] text-black`}
+                } w-80 2xl:w-96 h-[400px] 2xl:h-[440px] rounded-3xl flex justify-center items-center bg-[lightgrey] text-black`}
               >
                 <h1 className="branch text-4xl">{name}</h1>
               </div>
