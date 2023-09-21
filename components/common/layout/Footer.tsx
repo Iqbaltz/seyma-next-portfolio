@@ -22,12 +22,12 @@ export default function Footer() {
       // set a default rate, the higher the value, the faster it is
       let rate = 200;
       // get the width of the element
-      let distance = el?.clientWidth + 51;
+      let distance = el?.clientWidth;
       // get the margin-right of the element
       let style = window.getComputedStyle(el);
-      let marginRight = parseInt(style.marginRight) || 0;
+      let marginRight = parseInt(style?.marginRight) * 2 || 0;
       // get the total width of the element
-      let totalDistance = distance + marginRight;
+      let totalDistance = distance + marginRight + 1;
       // get the duration of the animation
       // for a better explanation, see the quoted codepen in the first comment
       let time = totalDistance / rate;
@@ -51,39 +51,39 @@ export default function Footer() {
           <div className="marquee">
             <span
               ref={(el) => marquee.current.push(el)}
-              className="inline-block"
+              className="inline-block mr-16"
             >
               <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
                 GET IN TOUCH
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="ml-16"
                   alt="small-star-white"
                 />
               </h1>
             </span>
             <span
               ref={(el) => marquee.current.push(el)}
-              className="inline-block"
+              className="inline-block mr-16"
             >
               <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
                 GET IN TOUCH
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="ml-16"
                   alt="small-star-white"
                 />
               </h1>
             </span>
             <span
               ref={(el) => marquee.current.push(el)}
-              className="inline-block"
+              className="inline-block mr-16"
             >
               <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
                 GET IN TOUCH
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="ml-16"
                   alt="small-star-white"
                 />
               </h1>
