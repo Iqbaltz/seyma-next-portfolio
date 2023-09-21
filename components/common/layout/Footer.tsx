@@ -8,7 +8,8 @@ const plusjkt = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Footer() {
-  const marquee = useRef<any[]>([]);
+  const wrapper = useRef<any>(null);
+  const allBox = useRef<any[]>([]);
 
   const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 
@@ -18,27 +19,58 @@ export default function Footer() {
   }
 
   useIsomorphicLayoutEffect(() => {
-    marquee.current.forEach((el: any) => {
-      // set a default rate, the higher the value, the faster it is
-      let rate = 200;
-      // get the width of the element
-      let distance = el?.clientWidth;
-      // get the margin-right of the element
-      let style = window.getComputedStyle(el);
-      let marginRight = parseInt(style?.marginRight) * 2 || 0;
-      // get the total width of the element
-      let totalDistance = distance + marginRight + 1;
-      // get the duration of the animation
-      // for a better explanation, see the quoted codepen in the first comment
-      let time = totalDistance / rate;
-      // get the parent of the element
-      let container = el?.parentElement;
+    const boxWidth = allBox.current[0].offsetWidth,
+      totalWidth = boxWidth * 3,
+      no01 = allBox.current,
+      dirFromLeft = "+=" + totalWidth,
+      dirFromRight = "-=" + totalWidth;
+    const mod = gsap.utils.wrap(0, totalWidth);
 
-      gsap.to(container, time, {
-        repeat: -1,
-        x: "-" + totalDistance,
-        ease: Linear.easeNone,
+    function marquees(which: any, time: any, direction: any) {
+      gsap.set(which, {
+        x: function (i) {
+          return i * boxWidth;
+        },
       });
+      const action = gsap.timeline().to(which, {
+        x: direction,
+        modifiers: {
+          x: (x) => mod(parseFloat(x)) + "px",
+        },
+        duration: time,
+        ease: "none",
+        repeat: -1,
+      });
+      return action;
+    }
+
+    const master = gsap.timeline({}).add(marquees(no01, 15, dirFromRight));
+    // === smooth 'stop'====
+    var smooth = gsap.to(master, {
+      timeScale: 1,
+      duration: 1,
+      ease: "power2.in",
+      paused: true,
+      onComplete: () =>
+        ScrollTrigger.removeEventListener("scrollEnd", () => {}),
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapper.current,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+      onUpdate: (self) => {
+        if (self.direction > 0) {
+          master.timeScale(2);
+        } else if (self.direction < 0) {
+          master.timeScale(2);
+
+          ScrollTrigger.addEventListener("scrollEnd", function () {
+            master.timeScale(1);
+          });
+        }
+      },
     });
   }, []);
 
@@ -47,52 +79,61 @@ export default function Footer() {
       className={`bg-[url(/images/grainy-bg.png)] bg-black/50 bg-blend-hard-light bg-cover h-max ${plusjkt.className}`}
     >
       <div className="py-20 bg-blend-darken bg-black bg-opacity-30">
-        <div className="marquee-container overflow-hidden whitespace-nowrap">
-          <div className="marquee">
-            <span
-              ref={(el) => marquee.current.push(el)}
-              className="inline-block mr-16"
+        <div
+          ref={wrapper}
+          className="wrapper w-[100%] h-24 2xl:h-32 overflow-hidden"
+        >
+          <div className="relative -left-[1074px]">
+            <div
+              ref={(el) => allBox.current.push(el)}
+              className="text-center absolute"
             >
-              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
-                GET IN TOUCH
+              <div className="flex items-center">
+                <h1 className="text-8xl 2xl:text-9xl font-semibold">
+                  GET IN TOUCH
+                </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="ml-16"
+                  className="mx-16"
                   alt="small-star-white"
                 />
-              </h1>
-            </span>
-            <span
-              ref={(el) => marquee.current.push(el)}
-              className="inline-block mr-16"
+              </div>
+            </div>
+            <div
+              ref={(el) => allBox.current.push(el)}
+              className="text-center absolute"
             >
-              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
-                GET IN TOUCH
+              <div className="flex items-center">
+                <h1 className="text-8xl 2xl:text-9xl font-semibold">
+                  GET IN TOUCH
+                </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="ml-16"
+                  className="mx-16"
                   alt="small-star-white"
                 />
-              </h1>
-            </span>
-            <span
-              ref={(el) => marquee.current.push(el)}
-              className="inline-block mr-16"
+              </div>
+            </div>
+            <div
+              ref={(el) => allBox.current.push(el)}
+              className="text-center absolute"
             >
-              <h1 className="flex text-8xl 2xl:text-9xl font-semibold">
-                GET IN TOUCH
+              <div className="flex items-center">
+                <h1 className="text-8xl 2xl:text-9xl font-semibold">
+                  GET IN TOUCH
+                </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="ml-16"
+                  className="mx-16"
                   alt="small-star-white"
                 />
-              </h1>
-            </span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
-          <p className="text-3xl 2xl:text-4xl mt-32 2xl:mt-40 max-w-[500px] 2xl:w-[560px]">
+        <div className="xl:max-w-[1160px] mt-32 2xl:mt-36 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
+          <p className="text-3xl 2xl:text-4xl max-w-[500px] 2xl:w-[560px]">
             Let’s grab a coffee and dive into your design needs.
           </p>
 
