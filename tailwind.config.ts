@@ -69,6 +69,7 @@ const config: Config = {
         appear: "appear 1s ease-in forwards",
         "appear-from-bottom": "appear-from-bottom 1s .3s ease forwards",
         "spin-back": "spin-back 16s 1.5s infinite",
+        "spin-slow": "spin 2s linear infinite",
       },
     },
   },
