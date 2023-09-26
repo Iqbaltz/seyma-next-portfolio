@@ -6,15 +6,16 @@ import {
   Projects,
   Stripline,
 } from "@/components/pages/home";
+import { readToken } from "@/sanity/env";
 import { client } from "@/sanity/lib/client";
 import { simpleProjectsQuery } from "@/sanity/lib/queries";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ draftMode = false }) => {
   const projects = await client.fetch(simpleProjectsQuery);
 
   return {
-    props: { projects },
+    props: { draftMode, projects, token: draftMode ? readToken : "" },
   };
 };
 
