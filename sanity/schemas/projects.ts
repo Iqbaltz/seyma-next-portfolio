@@ -17,29 +17,8 @@ export default defineType({
   ],
   fields: [
     {
-      title: "SEO",
       name: "seo",
-      type: "object",
-      fields: [
-        defineField({ name: "title", type: "string" }),
-        defineField({
-          name: "description",
-          type: "text",
-        }),
-        defineField({
-          name: "keywords",
-          title: "Keywords",
-          type: "string",
-        }),
-        defineField({
-          name: "image",
-          title: "Image",
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-        }),
-      ],
+      type: "seo",
       group: "seo",
     },
     {
@@ -85,9 +64,6 @@ export default defineType({
               alternative text is of great help for those 
               people that can rely on it to have a good idea of 
               what\'s on your page.`,
-              options: {
-                isHighlighted: true,
-              },
             },
           ],
         },

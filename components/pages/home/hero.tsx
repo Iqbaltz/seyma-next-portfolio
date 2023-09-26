@@ -16,7 +16,7 @@ export default function Hero() {
                 <img
                   src="/svg/sun.svg"
                   alt="star"
-                  className="h-24 mr-2 animate-spin-back"
+                  className="h-24 mr-4 animate-spin-back"
                 />
                 <h1 className="text-8xl 2xl:text-9xl branch text-right">
                   DIGITAL PRODUCTS &

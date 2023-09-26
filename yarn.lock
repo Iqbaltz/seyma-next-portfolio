@@ -1920,6 +1920,11 @@
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.0.0.tgz#16dc4454e65f0f95bd1a130fb0b06681a017eb54"
   integrity sha512-TLrJ9YXUzZeb1gijjCkERaie1LipSYfC/7KKIzJxGxPfxq+90HRklo/zzVFk45GctXFhxJRgMA5sbkCDVb9RiA==
 
+"@sanity/icons@^1.3":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-1.3.10.tgz#df934a94ae6669fe6b15515d800afb221cba0498"
+  integrity sha512-5wVG/vIiGuGrSmq+Bl3PY7XDgQrGv0fyHdJI64FSulnr2wH3NMqZ6C59UFxnrZ93sr7kOt0zQFoNv2lkPBi0Cg==
+
 "@sanity/icons@^2.0.0", "@sanity/icons@^2.4.0", "@sanity/icons@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.4.1.tgz#34ce2c5b58f53c7369ff926b651ea57c4e3c0a8c"
@@ -1953,6 +1958,14 @@
     rimraf "^3.0.2"
     split2 "^3.2.2"
     tar-fs "^2.1.1"
+
+"@sanity/incompatible-plugin@^1.0.0":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.4.tgz#c369af3b629de6c01e5843373fb3ede9972a53f4"
+  integrity sha512-2z39G9PTM8MXOF4fJNx3TG4tH0RrTjtH6dVLW93DSjCPbIS7FgCY5yWjZfQ+HVkwhLsF7ATDAGLA/jp65pFjAg==
+  dependencies:
+    "@sanity/icons" "^1.3"
+    react-copy-to-clipboard "^5.1.0"
 
 "@sanity/logos@^2.0.2":
   version "2.1.2"
@@ -2045,7 +2058,7 @@
     framer-motion "^7.5.3"
     react-refractor "^2.1.7"
 
-"@sanity/ui@^1.7.2":
+"@sanity/ui@^1.0.0", "@sanity/ui@^1.7.2":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-1.8.2.tgz#70f0c55e3bdd04b662d3cd84af168d4e27adfc2c"
   integrity sha512-XWtVdIG1PWBEiNPcObRfXsX/EPhiPCHMmfdn+frPIVLTLnoQnNju3W9UQAWec+BwjXBCpPtfc36AoiQSDUkxzw==
@@ -3908,7 +3921,7 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.6.tgz#e9e3acec6c9a28cf7bc36cbe35eea4ceb2c5c92d"
   integrity sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==
 
-framer-motion@^10.0.0, framer-motion@^10.16.1:
+framer-motion@^10.0.0, framer-motion@^10.15.1, framer-motion@^10.16.1:
   version "10.16.4"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.16.4.tgz#30279ef5499b8d85db3a298ee25c83429933e9f8"
   integrity sha512-p9V9nGomS3m6/CALXqv6nFGMuFOxbWsmaOrdmhyQimMIlLl3LC7h7l86wge/Js/8cRu5ktutS/zlzgR7eBOtFA==
@@ -5771,7 +5784,7 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-react-copy-to-clipboard@^5.0.4:
+react-copy-to-clipboard@^5.0.4, react-copy-to-clipboard@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz#09aae5ec4c62750ccb2e6421a58725eabc41255c"
   integrity sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==
@@ -6150,6 +6163,17 @@ sanity-diff-patch@^3.0.2:
   integrity sha512-Vsx6IPuMepvfaX2/jOFuUrJaloHvSmXavS9SL3iJhhIPAu20VfumCtdH5kpKlXKL1pBgCAZhWHXfLC4Fyg7qFg==
   dependencies:
     "@sanity/diff-match-patch" "^3.0.0"
+
+sanity-plugin-iframe-pane@^2.5.7:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-iframe-pane/-/sanity-plugin-iframe-pane-2.5.7.tgz#493ecae0efe837d0402724cfbf5e4faa1c104c0b"
+  integrity sha512-OmpRd9YNEAs7hMYF8b45EkTjbXq3LyeLahMfQid9stZsIreFCOxYktZc1Z2M7GYCN9OQUl/6F4iCiwGh1MbIVA==
+  dependencies:
+    "@sanity/icons" "^2.4.1"
+    "@sanity/incompatible-plugin" "^1.0.0"
+    "@sanity/ui" "^1.0.0"
+    framer-motion "^10.15.1"
+    usehooks-ts "2.9.1"
 
 sanity@^3.15.1:
   version "3.16.7"
@@ -7026,6 +7050,11 @@ use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+
+usehooks-ts@2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.9.1.tgz#953d3284851ffd097432379e271ce046a8180b37"
+  integrity sha512-2FAuSIGHlY+apM9FVlj8/oNhd+1y+Uwv5QNkMQz1oSfdHk4PXo1qoCw9I5M7j0vpH8CSWFJwXbVPeYDjLCx9PA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

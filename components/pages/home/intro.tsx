@@ -42,7 +42,7 @@ export default function Intro() {
   return (
     <section className="relative py-16 xl:py-20 bg-white rounded-3xl text-black">
       <div className="flex justify-between xl:max-w-[1160px] 2xl:max-w-[1600px] 2xl:px-12 mx-auto">
-        <div className="bg-[lightgrey] w-[320px] flex-grow rounded-full mr-8"></div>
+        <div className="bg-[lightgrey] w-[320px] flex-grow rounded-full mr-12 2xl:mr-16"></div>
         <div className="flex-grow py-4">
           <div className="relative text-[32px] 2xl:text-[40px] w-full">
             <p>Seyma is a UX designer with a knack for creating</p>
