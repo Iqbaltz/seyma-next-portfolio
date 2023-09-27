@@ -62,8 +62,11 @@ export default function Intro({ data }: IIntroProps) {
           />
         </div>
         <div className="flex-grow py-4">
-          {text?.map((txt: any) => (
-            <div className="relative text-[32px] 2xl:text-[40px] w-full">
+          {text?.map((txt: any, i: number) => (
+            <div
+              className="relative text-[32px] 2xl:text-[40px] w-full"
+              key={i}
+            >
               <p className="leading-[1.8]">{txt}</p>
               <div
                 ref={(el) => lineMasks.current.push(el)}
