@@ -1,16 +1,19 @@
 import { useIsomorphicLayoutEffect } from "@/helpers/ismorphicEffect";
+import { urlForImage } from "@/sanity/lib/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import React, { useRef } from "react";
 
-type Props = {};
+type Props = { data: any };
 
 gsap.registerPlugin(ScrollTrigger);
-export default function Approach({}: Props) {
+export default function Approach({ data }: Props) {
   const fadeIns = useRef<any>([]);
   const appearing = useRef<any>();
   const goRight = useRef<any>(null);
   const goLeft = useRef<any>(null);
+
+  const { title1, title2, image, description } = data;
 
   useIsomorphicLayoutEffect(() => {
     gsap.to(goRight.current, {
@@ -81,7 +84,7 @@ export default function Approach({}: Props) {
             alt="circular"
             className="h-24 ml-2 mr-4"
           />
-          PROCESS-DRIVEN
+          {title1}
         </h1>
         <div className="overflow-hidden">
           <h1
@@ -91,20 +94,20 @@ export default function Approach({}: Props) {
             }}
             className="branch text-8xl 2xl:text-9xl text-right mt-8"
           >
-            APPROACH TO DESIGN
+            {title2}
           </h1>
         </div>
         <p
           ref={(el) => fadeIns.current.push(el)}
           className="opacity-0 text-lg 2xl:text-xl mt-24 max-w-[600px] 2xl:max-w-[660px]"
         >
-          At the core of my approach is design thinking, a methodology that
-          prioritises empathy, experimentation, and innovation. By truly
-          understanding user needs and engaging in creative ideation and
-          prototyping, I’m able to create solutions that not only solve
-          problems, but also inspire and engage people.
+          {description}
         </p>
-        <img className="w-full mt-40" src="/images/process.png" alt="process" />
+        <img
+          className="w-full mt-40"
+          src={image ? urlForImage(image).url() : ""}
+          alt="process"
+        />
       </div>
     </section>
   );

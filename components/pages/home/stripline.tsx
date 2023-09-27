@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {};
+type Props = { data: any };
 
-export default function stripline({}: Props) {
+export default function stripline({ data }: Props) {
   return (
     <section className="min-h-[400px] flex justify-center items-center overflow-hidden">
       <div className="bg-white whitespace-nowrap max-w-screen text-black flex justify-center -rotate-[5deg]">
