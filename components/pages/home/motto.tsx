@@ -3,15 +3,17 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import React, { useRef } from "react";
 
-type Props = {};
+type Props = { data: any };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Motto({}: Props) {
+export default function Motto({ data }: Props) {
   const fadeIns = useRef<any>([]);
   const goRight = useRef<any>(null);
   const goLeft = useRef<any>(null);
   const appearing = useRef<any>([]);
+
+  const { title1, title2, title3, title4, description } = data;
 
   useIsomorphicLayoutEffect(() => {
     gsap.to(goRight.current, {
@@ -80,7 +82,7 @@ export default function Motto({}: Props) {
             }}
             className="opacity-0 text-8xl 2xl:text-9xl mb-8 font-semibold"
           >
-            CREATIVE
+            {title1}
           </h1>
           <div className="overflow-hidden">
             <h1
@@ -88,7 +90,7 @@ export default function Motto({}: Props) {
               className="text-8xl 2xl:text-9xl branch ml-[15%] flex"
             >
               <img src="/svg/sun.svg" alt="sun" className="w-24 mr-8" />
-              SOLUTIONS
+              {title2}
             </h1>
           </div>
         </div>
@@ -100,7 +102,7 @@ export default function Motto({}: Props) {
             }}
             className="opacity-0 text-8xl 2xl:text-9xl mb-8 font-semibold mr-[15%]"
           >
-            DRIVEN BY
+            {title3}
           </h1>
           <div className="overflow-hidden">
             <h1
@@ -108,7 +110,7 @@ export default function Motto({}: Props) {
               className="text-8xl 2xl:text-9xl branch flex justify-end"
             >
               <img src="/svg/star.svg" alt="sun" className="w-20 mr-8" />
-              EMPATHY
+              {title4}
             </h1>
           </div>
         </div>
@@ -116,10 +118,7 @@ export default function Motto({}: Props) {
           ref={(el) => fadeIns.current.push(el)}
           className="opacity-0 max-w-[440px] 2xl:max-w-[500px] text-lg 2xl:text-xl mt-16"
         >
-          I believe in using storytelling and design thinking to create products
-          that not only solve the right problems, but also engage and inspire
-          people. By putting empathy at the heart of my work, I strive to create
-          user experiences that are meaningful and bring joy to people.
+          {description}
         </p>
       </div>
     </section>

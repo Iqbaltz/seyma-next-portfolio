@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Hero() {
+interface IHeroProps {
+  data: any;
+}
+
+export default function Hero({ data }: IHeroProps) {
+  const { title1, title2, title3, description } = data;
   return (
     <div className="h-screen" data-scroll data-scroll-speed="-0.9">
       <div className="w-full">
@@ -8,7 +13,7 @@ export default function Hero() {
           <div className="h-full">
             <div className="overflow-hidden">
               <h1 className="text-8xl 2xl:text-9xl font-semibold mt-6 opacity-0 animate-appear-from-bottom">
-                HUMAN-CENTRED
+                {title1}
               </h1>
             </div>
             <div className="overflow-hidden">
@@ -16,22 +21,20 @@ export default function Hero() {
                 <img
                   src="/svg/sun.svg"
                   alt="star"
-                  className="h-24 mr-2 animate-spin-back"
+                  className="h-24 mr-4 animate-spin-back"
                 />
                 <h1 className="text-8xl 2xl:text-9xl branch text-right">
-                  DIGITAL PRODUCTS &
+                  {title2}
                 </h1>
               </div>
             </div>
             <div className="flex justify-between mt-11">
               <p className="max-w-[500px] 2xl:max-w-[600px] leading-9 xl:text-xl 2xl:text-2xl opacity-0 font-light animate-[appear_1s_2.1s_ease-in_forwards]">
-                Seyma is a creative UX/UI Designer who helps businesses tackle
-                digital design challenges & creating engaging experiences that
-                their users love.
+                {description}
               </p>
               <div className="overflow-hidden">
                 <h1 className="text-8xl 2xl:text-9xl branch opacity-0 animate-[appear-from-bottom-reversed_1s_1.5s_ease_forwards]">
-                  EXPERIENCES
+                  {title3}
                 </h1>
               </div>
             </div>

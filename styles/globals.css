@@ -31,7 +31,3 @@ body {
 .btn-effect:hover .dot-black {
   transform: scale(15);
 }
-
-.marquee {
-  font-size: 0;
-}

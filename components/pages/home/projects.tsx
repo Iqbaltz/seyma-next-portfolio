@@ -2,6 +2,7 @@ import { useIsomorphicLayoutEffect } from "@/helpers/ismorphicEffect";
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { urlForImage } from "@/sanity/lib/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,10 @@ const projectList = [
   },
 ];
 
-export default function Projects() {
+interface IProjectsProps {
+  data: any[];
+}
+export default function Projects({ data }: IProjectsProps) {
   const sectionRef = useRef<any>(null);
   const triggerRef = useRef<any>(null);
   const ups = useRef<any>([]);
@@ -101,9 +105,9 @@ export default function Projects() {
         <div ref={triggerRef}>
           <div
             ref={sectionRef}
-            className="px-40 2xl:px-52 h-screen w-max grid gap-40 grid-flow-col items-center relative"
+            className="px-40 2xl:px-52 h-screen w-max grid gap-52 2xl:gap-80 grid-flow-col items-center relative"
           >
-            {projectList.map(({ name, color }, i) => (
+            {data.map(({ title, mainImage, slug }, i) => (
               <div
                 key={i}
                 ref={(el) =>
@@ -111,9 +115,14 @@ export default function Projects() {
                 }
                 className={`${
                   i % 2 ? "-translate-y-20" : "translate-y-20"
-                } w-80 2xl:w-96 h-[400px] 2xl:h-[440px] rounded-3xl flex justify-center items-center bg-[lightgrey] text-black`}
+                } relative w-80 2xl:w-96 h-[400px] 2xl:h-[480px] rounded-3xl flex justify-start items-end overflow-hidden`}
               >
-                <h1 className="branch text-4xl">{name}</h1>
+                <img
+                  src={urlForImage(mainImage).url()}
+                  className="absolute w-full h-full object-cover"
+                  alt={title}
+                />
+                <h1 className="relative branch text-4xl m-8">{title}</h1>
               </div>
             ))}
           </div>

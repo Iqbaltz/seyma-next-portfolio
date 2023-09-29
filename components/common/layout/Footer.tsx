@@ -62,7 +62,7 @@ export default function Footer() {
       scrub: 1,
       onUpdate: (self) => {
         if (self.direction > 0) {
-          master.timeScale(2);
+          master.timeScale(1.5);
         } else if (self.direction < 0) {
           master.timeScale(2);
 
@@ -94,7 +94,7 @@ export default function Footer() {
                 </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="mx-16 animate-spin-slow"
                   alt="small-star-white"
                 />
               </div>
@@ -109,7 +109,7 @@ export default function Footer() {
                 </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="mx-16 animate-spin-slow"
                   alt="small-star-white"
                 />
               </div>
@@ -124,7 +124,7 @@ export default function Footer() {
                 </h1>
                 <img
                   src="/svg/small-star-white.svg"
-                  className="mx-16"
+                  className="mx-16 animate-spin-slow"
                   alt="small-star-white"
                 />
               </div>
