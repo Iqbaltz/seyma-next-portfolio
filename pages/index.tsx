@@ -26,7 +26,6 @@ export default function Home({
   homeData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [home] = useLiveQuery(homeData, homeQuery);
-  console.log(home);
   const { homeSeo } = home;
 
   const componentMap: any = {
