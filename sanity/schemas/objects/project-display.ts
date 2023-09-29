@@ -22,7 +22,6 @@ export default defineType({
               title: "project",
             },
             prepare({ title }) {
-              console.log("projk", title);
               return {
                 title: "title",
               };

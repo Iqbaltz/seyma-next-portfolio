@@ -9,22 +9,20 @@ import {
 import { readToken } from "@/sanity/env";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
-import { homeQuery, simpleProjectsQuery } from "@/sanity/lib/queries";
+import { homeQuery } from "@/sanity/lib/queries";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useLiveQuery } from "next-sanity/preview";
 import Head from "next/head";
 
 export const getStaticProps: GetStaticProps = async ({ draftMode = false }) => {
   const homeData = await client.fetch(homeQuery);
-  const projects = await client.fetch(simpleProjectsQuery);
 
   return {
-    props: { draftMode, projects, homeData, token: draftMode ? readToken : "" },
+    props: { draftMode, homeData, token: draftMode ? readToken : "" },
   };
 };
 
 export default function Home({
-  projects,
   homeData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [home] = useLiveQuery(homeData, homeQuery);
@@ -40,7 +38,7 @@ export default function Home({
     about: (data: any) => <Intro data={data} key={data?._key} />,
     tapeText: (data: any) => <Stripline data={data} key={data?._key} />,
     projectDisplay: (data: any) => (
-      <Projects data={projects} key={data?._key} />
+      <Projects data={data?.projectList} key={data?._key} />
     ),
   };
 

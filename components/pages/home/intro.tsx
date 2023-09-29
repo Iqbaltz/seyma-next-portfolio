@@ -14,7 +14,7 @@ export default function Intro({ data }: IIntroProps) {
   const lineMasks = useRef<any>([]);
   const btn = useRef<any>(null);
 
-  const { image, text } = data;
+  const { image, text, cta } = data;
 
   useIsomorphicLayoutEffect(() => {
     lineMasks.current.forEach((mask: any) => {
@@ -75,7 +75,7 @@ export default function Intro({ data }: IIntroProps) {
             </div>
           ))}
           <div className="flex justify-end items-center mt-16">
-            <p className="text-xl 2xl:text-2xl mr-6">GET TO KNOW ME</p>
+            <p className="text-xl 2xl:text-2xl mr-6">{cta?.text}</p>
             <button
               ref={btn}
               className="btn-effect relative overflow-hidden border border-black rounded-full"

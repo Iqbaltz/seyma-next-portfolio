@@ -15,6 +15,6 @@ export const simpleProjectsQuery = groq`
 export const homeQuery = groq`
   *[_type == "home"][0]{
     ...,
-    "sections":[...sections[]{..., defined(projectList) => projectList[]->}],
+    "sections":[...sections[]{..., projectList[]->}],
   }
 `;
